@@ -27,3 +27,13 @@ Bisa dilihat bahwa Server berperan sebagai _listener_ dan menerima _connection_ 
 <br><br>
 Jika port Server dan Client diganti dengan port yang sama, maka aplikasi tetap berjalan normal. Namun, bila salah satu port diganti menjadi yang berbeda dengan satu sama lain, akan muncul error karena Client tidak menemukan target Server dengan port yang sesuai. Tampak errornya sebagai berikut.
 ![Error](errorport.png)
+
+### 2.3 Small Changes by Adding Some Information to Client
+#### Modified Client 1
+![Client 1](client1modif.png)
+#### Modified Client 2
+![Client 2](client2modif.png)
+#### Modified Server
+![Server](servermodif.png)
+<br><br>
+Informasi yang saya tambahkan salah satunya pada koneksi antara Server dan Client memiliki keterangan bahwa koneksi terjadi pada `stefarion's computer`. Selain itu, terdapat modifikasi `bcast_tx.send(format!("{addr} : {text}"))?` yang menghasilkan pesan _broadcast_ dengan format `address` dan `text`. Alhasil, semua Client dapat melihat _address_ Client lain.
